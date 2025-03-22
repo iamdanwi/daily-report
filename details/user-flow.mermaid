@@ -1,0 +1,45 @@
+flowchart TD
+    Start([User Visits Site]) --> IsAuthenticated{Is Authenticated?}
+    
+    IsAuthenticated -->|No| Login[Login Page]
+    Login -->|Sign In| Dashboard
+    Login -->|Register| Register[Registration Page]
+    Register --> VerifyEmail[Email Verification]
+    VerifyEmail --> Dashboard
+    
+    IsAuthenticated -->|Yes| Dashboard[Dashboard Home]
+    
+    Dashboard --> RepoManagement[Repository Management]
+    Dashboard --> ReportConfig[Report Configuration]
+    Dashboard --> ViewReports[View Reports]
+    Dashboard --> TeamSettings[Team Settings]
+    
+    RepoManagement --> AddRepo[Add Repository]
+    RepoManagement --> EditRepo[Edit Repository]
+    RepoManagement --> ViewRepoStats[View Repository Stats]
+    
+    AddRepo --> ConnectProvider[Connect to Provider]
+    ConnectProvider --> SelectRepo[Select Repository]
+    SelectRepo --> ConfigureAccess[Configure Access]
+    ConfigureAccess --> RepoAdded[Repository Added]
+    RepoAdded --> Dashboard
+    
+    ReportConfig --> CreateTemplate[Create Report Template]
+    ReportConfig --> SetSchedule[Set Schedule]
+    ReportConfig --> AddRecipients[Add Recipients]
+    AddRecipients --> SaveConfig[Save Configuration]
+    SaveConfig --> Dashboard
+    
+    ViewReports --> ReportsList[List of Reports]
+    ReportsList --> ReportDetails[Report Details]
+    ReportDetails --> DownloadReport[Download Report]
+    ReportDetails --> ForwardReport[Forward Report]
+    
+    TeamSettings --> InviteMembers[Invite Team Members]
+    TeamSettings --> ManageRoles[Manage Roles]
+    TeamSettings --> BillingSettings[Billing Settings]
+    
+    style Dashboard fill:#4F46E5,color:#fff
+    style AddRepo fill:#059669,color:#fff
+    style CreateTemplate fill:#059669,color:#fff
+    style ReportDetails fill:#059669,color:#fff

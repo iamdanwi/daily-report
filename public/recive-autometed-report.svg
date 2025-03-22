@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect x="0" y="0" width="600" height="400" fill="#f9fafb" />
+  
+  <!-- Email client window -->
+  <rect x="50" y="50" width="500" height="300" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" />
+  <rect x="70" y="70" width="460" height="40" rx="4" fill="#f3f4f6" />
+  <rect x="85" y="80" width="120" height="20" rx="3" fill="#4b5563" opacity="0.5" />
+  <circle cx="500" cy="90" r="10" fill="#e5e7eb" />
+  <circle cx="470" cy="90" r="10" fill="#e5e7eb" />
+  
+  <!-- Email list -->
+  <rect x="70" y="130" width="180" height="200" rx="4" fill="#f3f4f6" />
+  
+  <!-- Email items -->
+  <rect x="80" y="140" width="160" height="40" rx="4" fill="#6366f1" opacity="0.1" />
+  <rect x="90" y="150" width="100" height="10" rx="2" fill="#4b5563" opacity="0.7" />
+  <rect x="90" y="165" width="140" height="8" rx="2" fill="#6b7280" opacity="0.5" />
+  
+  <rect x="80" y="190" width="160" height="40" rx="4" fill="#ffffff" />
+  <rect x="90" y="200" width="90" height="10" rx="2" fill="#4b5563" opacity="0.7" />
+  <rect x="90" y="215" width="140" height="8" rx="2" fill="#6b7280" opacity="0.5" />
+  
+  <rect x="80" y="240" width="160" height="40" rx="4" fill="#ffffff" />
+  <rect x="90" y="250" width="110" height="10" rx="2" fill="#4b5563" opacity="0.7" />
+  <rect x="90" y="265" width="140" height="8" rx="2" fill="#6b7280" opacity="0.5" />
+  
+  <!-- Email content -->
+  <rect x="270" y="130" width="260" height="200" rx="4" fill="#ffffff" stroke="#e5e7eb" />
+  
+  <!-- Email header -->
+  <rect x="290" y="150" width="220" height="10" rx="2" fill="#4b5563" opacity="0.7" />
+  <rect x="290" y="165" width="180" height="8" rx="2" fill="#6b7280" opacity="0.5" />
+  <rect x="290" y="180" width="220" height="1" fill="#e5e7eb" />
+  
+  <!-- Report content -->
+  <rect x="290" y="200" width="220" height="10" rx="2" fill="#4b5563" opacity="0.5" />
+  <rect x="290" y="220" width="220" height="8" rx="2" fill="#6b7280" opacity="0.4" />
+  <rect x="290" y="235" width="220" height="8" rx="2" fill="#6b7280" opacity="0.4" />
+  <rect x="290" y="250" width="220" height="8" rx="2" fill="#6b7280" opacity="0.4" />
+  
+  <!-- Chart in email -->
+  <rect x="290" y="270" width="220" height="40" rx="4" fill="#f3f4f6" />
+  <polyline points="300,300 320,290 340,295 360,280 380,285 400,275 420,280 440,270 460,280 480,275 500,265" fill="none" stroke="#6366f1" stroke-width="2" />
+</svg>

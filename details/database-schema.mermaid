@@ -1,0 +1,66 @@
+erDiagram
+    Users {
+        id UUID PK
+        email String
+        name String
+        password String
+        createdAt DateTime
+        updatedAt DateTime
+    }
+    
+    Teams {
+        id UUID PK
+        name String
+        ownerId UUID FK
+        createdAt DateTime
+        updatedAt DateTime
+    }
+    
+    TeamMembers {
+        id UUID PK
+        teamId UUID FK
+        userId UUID FK
+        role String
+        createdAt DateTime
+        updatedAt DateTime
+    }
+    
+    Repositories {
+        id UUID PK
+        name String
+        url String
+        provider String
+        credentials JSON
+        teamId UUID FK
+        createdAt DateTime
+        updatedAt DateTime
+    }
+    
+    ReportConfigs {
+        id UUID PK
+        name String
+        repositoryId UUID FK
+        schedule String
+        template JSON
+        recipients JSON
+        createdBy UUID FK
+        createdAt DateTime
+        updatedAt DateTime
+    }
+    
+    Reports {
+        id UUID PK
+        configId UUID FK
+        content Text
+        generatedAt DateTime
+        status String
+        sentTo JSON
+    }
+    
+    Users ||--o{ Teams : "owns"
+    Users ||--o{ TeamMembers : "is member of"
+    Teams ||--o{ TeamMembers : "has members"
+    Teams ||--o{ Repositories : "owns"
+    Users ||--o{ ReportConfigs : "creates"
+    Repositories ||--o{ ReportConfigs : "has reports"
+    ReportConfigs ||--o{ Reports : "generates"

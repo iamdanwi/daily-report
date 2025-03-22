@@ -1,0 +1,55 @@
+flowchart TB
+    subgraph Client
+        UI[Next.js UI]
+        ReactHooks[React Hooks/Context]
+        SWR[SWR Data Fetching]
+    end
+
+    subgraph "Next.js Server"
+        API[API Routes]
+        AuthSystem[Authentication]
+        RepoProcessor[Repository Processor]
+        ReportEngine[Report Engine]
+        EmailService[Email Service]
+        BackgroundJobs[Background Jobs]
+    end
+
+    subgraph Database
+        Postgres[(PostgreSQL)]
+        Redis[(Redis Cache)]
+    end
+
+    subgraph "External Services"
+        GithubAPI[GitHub API]
+        GitlabAPI[GitLab API]
+        BitbucketAPI[Bitbucket API]
+        SendGridAPI[SendGrid API]
+    end
+
+    UI --> ReactHooks
+    ReactHooks --> SWR
+    SWR <--> API
+
+    API <--> AuthSystem
+    API <--> RepoProcessor
+    API <--> ReportEngine
+    API <--> BackgroundJobs
+
+    RepoProcessor <--> GithubAPI
+    RepoProcessor <--> GitlabAPI
+    RepoProcessor <--> BitbucketAPI
+
+    ReportEngine <--> EmailService
+    EmailService <--> SendGridAPI
+
+    AuthSystem <--> Postgres
+    RepoProcessor <--> Postgres
+    ReportEngine <--> Postgres
+    BackgroundJobs <--> Redis
+    
+    style UI fill:#4F46E5,color:#fff
+    style Postgres fill:#336791,color:#fff
+    style Redis fill:#DC382D,color:#fff
+    style GithubAPI fill:#000000,color:#fff
+    style GitlabAPI fill:#FC6D26,color:#fff
+    style SendGridAPI fill:#1A82E2,color:#fff
